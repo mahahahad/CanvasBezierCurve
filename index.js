@@ -71,7 +71,12 @@ if (canvasEl.getContext) {
 
   document.addEventListener("mousemove", (e) => {
     if (!clicked) return;
-    // TODO: Once clicked on control point, ignore if it is within the range and simply draw curve and update till mouse button is released
+    // TODO: Once clicked on control point, ignore if it is within the
+    // range and simply draw curve and update till mouse button is released
+
+    // Check if the user clicked location is within the range of a
+    // control point since precise clicking is impractical and move
+    // control point to where user drags cursor to.
     if (
       e.clientX >= cp1.x - 10 &&
       e.clientX <= cp1.x + 10 &&
